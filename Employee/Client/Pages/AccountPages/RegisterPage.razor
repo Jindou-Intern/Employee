@@ -1,13 +1,30 @@
 ﻿@page "/identity/account/register"
+@using Client.Pages.OtherPage
+@using Syncfusion.Blazor.Popups
+@layout AuthenticationLayout
+@inject SfDialogService DialogService
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-6">
+
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
             <EditForm Enhance Model="User" OnValidSubmit="HandleRegistration">
                 <DataAnnotationsValidator />
-                <ValidationSummary />
-                <div class="card">
-                    <div class="card-header">Fill this form to Register</div>
+                
+                <div class="card bg-dark d-flex justify-content-center" style="opacity:0.5; margin-top:50%; border-radius: 10px; color:white; font-weight:bold;">
+                    <div class="card-header text-center fs-5">Register an account</div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center">
+                                <img style="border-radius:20px" src="../images/companylogos/jindou.png" height="50" width="50" />
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                        </div>
+                    </div>
+
                     <div class="card-body">
                         <div class="form-group mt-3">
                             <label class="form-label">Fullname</label>
@@ -30,31 +47,86 @@
                         </div>
 
                         <div class="form-group mt-3">
-                            <button class="btn btn-outline-primary float-end" type="submit">Register</button>
+                            @if(ShowLoadingButton)
+                            {
+                                <ButtonLoadingSpinner></ButtonLoadingSpinner>
+                            }
+                            else
+                            {
+                                <button class="btn btn-primary float-end" type="submit">Register</button>
+                            }
                         </div>
                     </div>
 
+                    <div class="card-footer">
+                        <span class="text-center">
+                            Have account already? |
+                            <a class="btn-link" href="/identity/account/login">Sign In</a>
+                        </span>
+                        <ValidationSummary />
+                    </div>
                 </div>
             </EditForm>
 
         </div>
+        <div class="col-lg-4"></div>
     </div>
 </div>
 
 @code{
+    public bool ShowLoadingButton { get; set; } = false;
     Register User = new();
+
+    [CascadingParameter] public Task<AuthenticationState>? AuthenticationState { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        if (AuthenticationState != null)
+        {
+            await CheckUserAuthentication();
+        }
+        else
+        {
+            // Xử lý trường hợp AuthenticationState bị null
+            Console.WriteLine("AuthenticationState is null");
+            NavManager.NavigateTo("/identity/account/login");
+        }
+    }
 
     async Task HandleRegistration()
     {
+        ShowLoadingButton = true;
         var result = await accountService.CreateAsync(User);
         if(result.Flag)
         {
+            await DisplayDialog(result.Message, "Success");
             User = new();
         }
         else
         {
-            
+            await DisplayDialog(result.Message, "Alert");
         }
-
+        ShowLoadingButton = false;
     }
+
+    private async Task DisplayDialog(string content, string title)
+    {
+        await DialogService.AlertAsync(content, title);
+    }
+
+    private async Task CheckUserAuthentication()
+    {
+        var user = (await AuthenticationState)?.User;
+        if (user?.Identity != null && user.Identity.IsAuthenticated)
+        {
+            // Người dùng đã xác thực, điều hướng về trang chủ
+            NavManager.NavigateTo("/home/dashboard", forceLoad: true);
+        }
+        else
+        {
+            // Người dùng chưa xác thực hoặc Identity bị null, điều hướng về trang đăng nhập
+            NavManager.NavigateTo("/identity/account/login");
+        }
+    }
+
 }
