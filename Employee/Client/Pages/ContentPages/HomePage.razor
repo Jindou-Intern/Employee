@@ -1,21 +1,15 @@
 ﻿@page "/home/dashboard"
 
-<h1>Home Page</h1>
-
+@using Client.Pages.AdministrationPages
+@using Client.Pages.DepartmentPages
+<TableBanner />
+<GeneralDepartmentPage/>
 @code {
-    [CascadingParameter] public Task<AuthenticationState>? AuthenticationState { get; set; }
+    [CascadingParameter] public Task<AuthenticationState>?AuthenticationState { get; set; }
 
-    protected async override Task OnInitializedAsync()
+    protected async override Task OnParametersSetAsync()
     {
-        if (AuthenticationState != null)
-        {
-            await CheckUserAuthentication();
-        }
-        else
-        {
-            Console.WriteLine("AuthenticationState is null");
-            NavManager.NavigateTo("/identity/account/login");
-        }
+            await CheckUserAuthentication();   
     }
 
     private async Task CheckUserAuthentication()
