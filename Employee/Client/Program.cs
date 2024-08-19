@@ -1,25 +1,34 @@
-var builder = WebApplication.CreateBuilder(args);
+using Blazored.LocalStorage;
+using Client;
+using Client.ApplicationStates;
+using ClientLibrary.Helpers;
+using ClientLibrary.Services.Contracts;
+using ClientLibrary.Services.Implemmentations;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Syncfusion.Blazor;
+using Syncfusion.Blazor.Popups;
 
-// Add services to the container.
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.RootComponents.Add<App>("#app");
+builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+builder.Services.AddTransient<CustomHttpHandler>();
+builder.Services.AddHttpClient("SystemApiClient", client =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    client.BaseAddress = new Uri("https://localhost:7081");
+}).AddHttpMessageHandler<CustomHttpHandler>();
 
-app.UseHttpsRedirection();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddScoped<GetHttpClient>();
+builder.Services.AddScoped<LocalStorageService>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+builder.Services.AddScoped<IUserAccountService, UserAccountService>();
 
-app.UseAuthorization();
+builder.Services.AddScoped<DepartmentState>();
 
-app.MapControllers();
-
-app.Run();
+builder.Services.AddSyncfusionBlazor();
+builder.Services.AddScoped<SfDialogService>();
+await builder.Build().RunAsync();
