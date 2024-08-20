@@ -27,7 +27,8 @@ namespace ServerLibrary.Repositories.Implementations
 
         public  async Task<GeneralResponse> Insert(GeneralDepartment item)
         {
-            if (!await CheckName(item.Name!)) return new GeneralResponse(false, "Department already added");
+            var checkIfNull = await CheckName(item.Name);
+            if (!checkIfNull) return new GeneralResponse(false, "General Department already added");
             appDbContext.GeneralDepartments.Add(item);
             await Commit();
             return Success();

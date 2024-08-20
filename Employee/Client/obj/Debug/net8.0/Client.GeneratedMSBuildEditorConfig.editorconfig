@@ -38,28 +38,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFBhZ2VzXFJlZ2lzdGVyUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project/Employee/Employee/Client/Pages/AdministrationPages/TableBanner.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5pc3RyYXRpb25QYWdlc1xUYWJsZUJhbm5lci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [F:/Project/Employee/Employee/Client/Pages/AuthenticationPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25QYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/DepartmentPages/DepartmentDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXERlcGFydG1lbnRQYWdlc1xEZXBhcnRtZW50RGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/DepartmentPages/DepartmentPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXERlcGFydG1lbnRQYWdlc1xEZXBhcnRtZW50UGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/DepartmentPages/GeneralDepartmentDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXERlcGFydG1lbnRQYWdlc1xHZW5lcmFsRGVwYXJ0bWVudERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/DepartmentPages/GeneralDepartmentPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXERlcGFydG1lbnRQYWdlc1xHZW5lcmFsRGVwYXJ0bWVudFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project/Employee/Employee/Client/Pages/ContentPages/HomePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEhvbWVQYWdlLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/Project/Employee/Employee/Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/Project/Employee/Employee/Client/Pages/DepartmentPages/GeneralDepartmentDialog.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudFBhZ2VzXEdlbmVyYWxEZXBhcnRtZW50RGlhbG9nLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[F:/Project/Employee/Employee/Client/Pages/DepartmentPages/GeneralDepartmentPage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudFBhZ2VzXEdlbmVyYWxEZXBhcnRtZW50UGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project/Employee/Employee/Client/Pages/OtherPage/ButtonLoadingSpinner.razor]
@@ -70,8 +70,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFByb2ZpbGVEcm9wRG93bi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Project/Employee/Employee/Client/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/TableBanner.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFRhYmxlQmFubmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project/Employee/Employee/Client/_Imports.razor]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WVCTbnpkRyE=",
+  "dgSpecHash": "9EHtzbxcjKs=",
   "success": true,
   "projectFilePath": "F:\\Project\\Employee\\Employee\\Client\\Client.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,13 @@
     "C:\\Users\\huynh\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.7\\microsoft.net.sdk.webassembly.pack.8.0.7.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.buttons\\26.2.9\\syncfusion.blazor.buttons.26.2.9.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.core\\26.2.9\\syncfusion.blazor.core.26.2.9.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.data\\26.2.9\\syncfusion.blazor.data.26.2.9.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.dropdowns\\26.2.9\\syncfusion.blazor.dropdowns.26.2.9.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.inputs\\26.2.9\\syncfusion.blazor.inputs.26.2.9.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.notifications\\26.2.9\\syncfusion.blazor.notifications.26.2.9.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.popups\\26.2.9\\syncfusion.blazor.popups.26.2.9.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.spinner\\26.2.9\\syncfusion.blazor.spinner.26.2.9.nupkg.sha512",
+    "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.splitbuttons\\26.2.9\\syncfusion.blazor.splitbuttons.26.2.9.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.blazor.themes\\26.2.9\\syncfusion.blazor.themes.26.2.9.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\syncfusion.licensing\\26.2.9\\syncfusion.licensing.26.2.9.nupkg.sha512",
     "C:\\Users\\huynh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
