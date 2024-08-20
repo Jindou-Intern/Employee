@@ -57,7 +57,13 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\mscorlib
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\netstandard.wasm
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Buttons.wasm
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Core.wasm
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Data.wasm
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.DropDowns.wasm
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Inputs.wasm
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Notifications.wasm
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Popups.wasm
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Spinner.wasm
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.SplitButtons.wasm
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Themes.wasm
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Licensing.wasm
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.AppContext.wasm
@@ -239,6 +245,7 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.S
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.Tools.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.Extensions.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Web.wasm.gz
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.DropDowns.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.MemoryMappedFiles.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.DataContractSerialization.wasm.gz
@@ -255,6 +262,7 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.C
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.CoreLib.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Dynamic.Runtime.wasm.gz
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Spinner.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Tasks.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.Primitives.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Resources.Writer.wasm.gz
@@ -328,6 +336,7 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Microsof
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Tasks.Parallel.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Http.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\netstandard.wasm.gz
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Notifications.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.UnmanagedMemoryStream.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.AccessControl.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Formats.Tar.wasm.gz
@@ -406,6 +415,7 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Microsof
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.Uri.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.Xml.Linq.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.Abstractions.wasm.gz
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Data.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Sockets.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Resources.Reader.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.ComponentModel.EventBasedAsync.wasm.gz
@@ -430,6 +440,7 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.N
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.X509Certificates.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Tasks.Dataflow.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Transactions.Local.wasm.gz
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.SplitButtons.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.WebClient.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.FileSystem.AccessControl.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.ObjectModel.wasm.gz
@@ -445,6 +456,7 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.R
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.InteropServices.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.Emit.ILGeneration.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.NetworkInformation.wasm.gz
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Syncfusion.Blazor.Inputs.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.Calendars.wasm.gz
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.Channels.wasm.gz
@@ -487,7 +499,13 @@ F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Microsoft.JSInterop.dll
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Microsoft.JSInterop.WebAssembly.dll
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Buttons.dll
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Core.dll
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Data.dll
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.DropDowns.dll
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Inputs.dll
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Notifications.dll
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Popups.dll
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Spinner.dll
+F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.SplitButtons.dll
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Blazor.Themes.dll
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\Syncfusion.Licensing.dll
 F:\Project\Employee\Employee\Client\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
@@ -715,7 +733,13 @@ F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Microsoft.JSInterop.
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Microsoft.JSInterop.WebAssembly.wasm
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Buttons.wasm
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Core.wasm
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Data.wasm
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.DropDowns.wasm
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Inputs.wasm
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Notifications.wasm
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Popups.wasm
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Spinner.wasm
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.SplitButtons.wasm
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Blazor.Themes.wasm
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\Syncfusion.Licensing.wasm
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\webcil\System.IdentityModel.Tokens.Jwt.wasm
@@ -940,7 +964,13 @@ F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\h1qirludwk.gz
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\lh9lbhnb84.gz
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\ptewb8h0f9.gz
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\i0tiauzqmi.gz
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\rvxen5zr6p.gz
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\2xcgq02jci.gz
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\zitdoe2d0n.gz
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\h4et9oyh0q.gz
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\cj4jndv7a3.gz
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\5ke6g85yy6.gz
+F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\w1b0h6j66v.gz
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\kaaxeuak15.gz
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\0wm6eayfal.gz
 F:\Project\Employee\Employee\Client\obj\Debug\net8.0\compressed\csskd29ily.gz
