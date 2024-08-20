@@ -1,10 +1,9 @@
-﻿
-<SfDialog Width="280px" IsModal="true" ShowCloseIcon="true" @bind-bind-Visible="IsVisible">
+﻿<SfDialog Width="280px" IsModal="true" ShowCloseIcon="true" @bind-Visible="IsVisible">
     <DialogEvents OnOpen="OpenDialog"></DialogEvents>
     <DialogTemplates>
         <Header>@Title Department</Header>
         <Content>
-            <EditForm Model="Department" Enhance OnSubmit="Save">
+            <EditForm Model="Department" OnValidSubmit="Save">
                 <div class="card border-success">
                     <div class="card-body">
                         <div class="form-group">
@@ -54,12 +53,18 @@
 
     private bool IsVisible { get; set; } = false;
     public string Title { get; set; } = "Add";
-    private async void Save()
+
+    private async Task Save()
     {
         if (string.IsNullOrEmpty(Department.Name) || Department.GeneralDepartmentId <= 0)
+        {
             await dialogService.AlertAsync("You need to provide Department name.", "Alert!");
+        }
         else
+        {
             await HandleSaveOperationEvent.InvokeAsync(Department);
+            IsVisible = false; // Close the dialog after saving
+        }
     }
 
     public void OpenDialog()
