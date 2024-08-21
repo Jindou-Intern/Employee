@@ -66,6 +66,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXERlcGFydG1lbnRQYWdlc1xHZW5lcmFsRGVwYXJ0bWVudFBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/EmployeePages/AddOrUpdateEmployeePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEVtcGxveWVlUGFnZXNcQWRkT3JVcGRhdGVFbXBsb3llZVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/EmployeePages/EmployeePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEVtcGxveWVlUGFnZXNcRW1wbG95ZWVQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project/Employee/Employee/Client/Pages/ContentPages/HomePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEhvbWVQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -92,6 +100,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Project/Employee/Employee/Client/Pages/ContentPages/LocationPages/TownPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXExvY2F0aW9uUGFnZXNcVG93blBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/UserPage/UserDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXFVzZXJQYWdlXFVzZXJEaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/UserPage/UserPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXFVzZXJQYWdlXFVzZXJQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project/Employee/Employee/Client/Pages/OtherPage/ButtonLoadingSpinner.razor]

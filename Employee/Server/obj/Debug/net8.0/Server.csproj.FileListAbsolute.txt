@@ -41,6 +41,7 @@ F:\Project\Employee\Employee\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filt
 F:\Project\Employee\Employee\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 F:\Project\Employee\Employee\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 F:\Project\Employee\Employee\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Project\Employee\Employee\Server\bin\Debug\net8.0\Syncfusion.Licensing.dll
 F:\Project\Employee\Employee\Server\bin\Debug\net8.0\System.CodeDom.dll
 F:\Project\Employee\Employee\Server\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 F:\Project\Employee\Employee\Server\bin\Debug\net8.0\System.Composition.Convention.dll

@@ -2,16 +2,14 @@
 
 @layout AuthenticationLayout
 
-
-
 <div class="container">
     <div class="row">
         <div class="col-lg-4"></div>
-        
+
         <div class="col-lg-4">
-            <EditForm Enhance Model="User" OnValidSubmit="HandleLogin">
-                <DataAnnotationsValidator/>
-                
+            <EditForm Model="User" OnValidSubmit="HandleLogin">
+                <DataAnnotationsValidator />
+
                 <div class="card bg-dark" style="opacity:0.5; margin-top:50%; border-radius: 10px; color:white; font-weight:bold;">
                     <div class="card-header text-center fs-5 mb-2">Login</div>
 
@@ -21,23 +19,23 @@
                             <div class="col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center">
                                 <img style="border-radius:20px" src="../images/companylogos/jindou.png" height="50" width="50" />
                             </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4"></div>
+                            <div class="col-lg-4 col-md-4 col-sm-4"></div>
                         </div>
                     </div>
 
                     <div class="card-body">
                         <div class="form-group mt-3">
                             <label class="form-label">Email</label>
-                            <InputText @bind-Value="User.Email" class="form-control"></InputText>
+                            <InputText @bind-Value="User.Email" class="form-control" autocomplete="email"></InputText>
                         </div>
 
                         <div class="form-group mt-3">
                             <label class="form-label">Password</label>
-                            <input type="password" @bind="User.Password" class="form-control"></input>
+                            <InputText @bind-Value="User.Password" type="password" class="form-control" autocomplete="current-password"></InputText>
                         </div>
 
                         <div class="form-group mt-3">
-                            @if(ShowLoadingButton)
+                            @if (ShowLoadingButton)
                             {
                                 <ButtonLoadingSpinner></ButtonLoadingSpinner>
                             }
@@ -50,11 +48,12 @@
 
                     <div class="card-footer">
                         <span class="text-center">
-                            Don't have account? | 
-                            <a class="btn-link" href="identity/account/register">Sign Up</a>
+                            Don't have an account? |
+                            <NavLink class="btn-link" href="/identity/account/register">Sign Up</NavLink>
                         </span>
                         <ValidationSummary />
-                    </div>                   
+                    </div>
+
                 </div>
             </EditForm>
         </div>
@@ -65,11 +64,11 @@
 
 @code {
     public bool ShowLoadingButton { get; set; } = false;
-    Login User = new();
+    private Login User = new();
 
     [CascadingParameter] public Task<AuthenticationState>? AuthenticationState { get; set; }
 
-    protected async override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         if (AuthenticationState != null)
         {
@@ -83,7 +82,7 @@
         }
     }
 
-    async Task HandleLogin()
+    private async Task HandleLogin()
     {
         ShowLoadingButton = true;
         var result = await accountService.SignInAsync(User);
@@ -91,7 +90,7 @@
         {
             await DisplayDialog(result.Message, "Login Success");
             var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
-            await customAuthStateProvider.UpdateAuthenticationState(new UserSession() { Token = result.Token, RefreshToken = result.RefreshToken});
+            await customAuthStateProvider.UpdateAuthenticationState(new UserSession() { Token = result.Token, RefreshToken = result.RefreshToken });
             NavManager.NavigateTo("/", forceLoad: true);
         }
         else
@@ -107,7 +106,7 @@
         await dialogService.AlertAsync(content, title);
     }
 
-     private async Task CheckUserAuthentication()
+    private async Task CheckUserAuthentication()
     {
         var user = (await AuthenticationState)?.User;
         if (user?.Identity != null && user.Identity.IsAuthenticated)

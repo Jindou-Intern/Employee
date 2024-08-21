@@ -1,5 +1,6 @@
 ﻿
 using BaseLibrary.DTOs;
+using BaseLibrary.Entities;
 using BaseLibrary.Responses;
 
 namespace ClientLibrary.Services.Contracts
@@ -9,6 +10,10 @@ namespace ClientLibrary.Services.Contracts
         Task<GeneralResponse> CreateAsync(Register user);
         Task<LoginResponse> SignInAsync(Login user);
         Task<LoginResponse> RefreshTokenAsync(RefreshToken token);
-        Task<WeatherForecast[]> GetWeatherForecasts();
+
+        Task<List<MangeUser>> GetUsers();
+        Task<GeneralResponse> UpdateUser(MangeUser user);
+        Task<List<SystemRole>> GetRoles();
+        Task<GeneralResponse> DeleteUser(int id);
     }
 }
