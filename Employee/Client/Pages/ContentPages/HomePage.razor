@@ -2,19 +2,29 @@
 
 
 <TableBanner />
-<GeneralDepartmentPage/>
-<DepartmentPage/>
-<BranchPage/>
-<CountryPage/>
-<CityPage/>
-<TownPage/>
+<GeneralDepartmentPage />
+<DepartmentPage />
+<BranchPage />
+<CountryPage />
+<CityPage />
+<TownPage />
+<UserPage />
+<EmployeePage/>
 
 @code {
-    [CascadingParameter] public Task<AuthenticationState>?AuthenticationState { get; set; }
+    [CascadingParameter] public Task<AuthenticationState>? AuthenticationState { get; set; }
 
     protected async override Task OnParametersSetAsync()
     {
-            await CheckUserAuthentication();   
+        if (AuthenticationState != null)
+        {
+            await CheckUserAuthentication();
+        }
+        else
+        {
+            Console.WriteLine("AuthenticationState is null");
+            NavManager.NavigateTo("/identity/account/login");
+        }
     }
 
     private async Task CheckUserAuthentication()

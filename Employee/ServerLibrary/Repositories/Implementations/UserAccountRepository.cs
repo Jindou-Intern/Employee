@@ -59,7 +59,7 @@ namespace ServerLibrary.Repositories.Implementations
 
         public async Task<LoginResponse> SignInAsync(Login user)
         {
-            if(user is null) return new LoginResponse(false,"Model is empty");
+            if (user is null) return new LoginResponse(false, "Model is empty");
 
             var applicationUser = await FindUserByEmail(user.Email!);
             if (applicationUser is null) return new LoginResponse(false, "User not found");
@@ -78,7 +78,7 @@ namespace ServerLibrary.Repositories.Implementations
             string refreshToken = GenerateRefreshToken();
 
             //Save the refresh token to the database
-            var findUser = await appDbContext.RefreshTokenInfos.FirstOrDefaultAsync(_=>_.UserId == applicationUser.Id);
+            var findUser = await appDbContext.RefreshTokenInfos.FirstOrDefaultAsync(_ => _.UserId == applicationUser.Id);
             if (findUser is not null)
             {
                 findUser!.Token = refreshToken;
@@ -88,7 +88,7 @@ namespace ServerLibrary.Repositories.Implementations
             {
                 await AddToDatabase(new RefreshTokenInfo() { Token = refreshToken, UserId = applicationUser.Id });
             }
-            return new LoginResponse(true,"Login Successfully",jwtToken,refreshToken);
+            return new LoginResponse(true, "Login Successfully", jwtToken, refreshToken);
         }
 
         private string GenerateRefreshToken() => Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
@@ -156,6 +156,57 @@ namespace ServerLibrary.Repositories.Implementations
         private async Task<UserRole> FindUserRole(int userId) => await appDbContext.UserRoles.FirstOrDefaultAsync(_ => _.UserId == userId);
 
         private async Task<SystemRole> FindRoleName(int roleId) => await appDbContext.SystemRoles.FirstOrDefaultAsync(_ => _.Id == roleId);
+
+
+        public async Task<List<MangeUser>> GetUsers()
+        {
+            var allUsers = await GetApplicationUsers();
+            var allUserRoles = await UserRoles();
+            var allRoles = await SystemRoles();
+
+            if (allUsers.Count == 0 || allRoles.Count == 0) return null!;
+
+            var users = new List<MangeUser>();
+            foreach(var user in allUsers)
+            {
+                var userRole = allUserRoles.FirstOrDefault(u => u.UserId == user.Id);
+                var roleName = allRoles.FirstOrDefault(u => u.Id == userRole!.RoleId);
+                users.Add(new MangeUser()
+                {
+                    UserId = user.Id,
+                    Name = user.Fullname!,
+                    Email = user.Email!,
+                    Role = roleName!.Name!
+                });
+                
+            }
+            return users;        
+        }
+
+        public async Task<GeneralResponse> UpdateUser(MangeUser user)
+        {
+            var getRole = (await SystemRoles()).FirstOrDefault(r => r.Name!.Equals(user.Role));
+            var userRole = await appDbContext.UserRoles.FirstOrDefaultAsync(u => u.UserId == user.UserId);
+            userRole!.RoleId = getRole!.Id;
+            await appDbContext.SaveChangesAsync();
+            return new GeneralResponse(true, "User updated successfully");
+        }
+
+        public async Task<List<SystemRole>> GetRoles() => await SystemRoles();
+
+        public async Task<GeneralResponse> DeleteUser(int id)
+        {
+           var user = await appDbContext.ApplicationUsers.FirstOrDefaultAsync(u=>u.Id == id);
+            appDbContext.ApplicationUsers.Remove(user!);
+            await appDbContext.SaveChangesAsync(); 
+            return new GeneralResponse(true, "User deleted successfully");
+        }
+
+        private async Task<List<SystemRole>> SystemRoles() => await appDbContext.SystemRoles.AsNoTracking().ToListAsync();
+
+        private async Task<List<UserRole>> UserRoles() => await appDbContext.UserRoles.AsNoTracking().ToListAsync();
+
+        private async Task<List<ApplicationUser>> GetApplicationUsers() => await appDbContext.ApplicationUsers.AsNoTracking().ToListAsync();
 
     }
 }

@@ -3,12 +3,11 @@
 
 <div class="container">
     <div class="row">
-
         <div class="col-lg-4"></div>
         <div class="col-lg-4">
-            <EditForm Enhance Model="User" OnValidSubmit="HandleRegistration">
+            <EditForm Model="User" OnValidSubmit="HandleRegistration">
                 <DataAnnotationsValidator />
-                
+
                 <div class="card bg-dark d-flex justify-content-center" style="opacity:0.5; margin-top:50%; border-radius: 10px; color:white; font-weight:bold;">
                     <div class="card-header text-center fs-5">Register an account</div>
 
@@ -30,21 +29,21 @@
 
                         <div class="form-group mt-3">
                             <label class="form-label">Email</label>
-                            <InputText @bind-Value="User.Email" class="form-control"></InputText>
+                            <InputText @bind-Value="User.Email" class="form-control" autocomplete="email"></InputText>
                         </div>
 
                         <div class="form-group mt-3">
                             <label class="form-label">Password</label>
-                            <input type="password" @bind="User.Password" class="form-control"></input>
+                            <InputText @bind-Value="User.Password" type="password" class="form-control" autocomplete="new-password"></InputText>
                         </div>
 
                         <div class="form-group mt-3">
-                            <label class="form-label">ConfimPassword</label>
-                            <input type="password" @bind="User.ConfimPassword" class="form-control"></input>
+                            <label class="form-label">Confirm Password</label>
+                            <InputText @bind-Value="User.ConfimPassword" type="password" class="form-control" autocomplete="new-password"></InputText>
                         </div>
 
                         <div class="form-group mt-3">
-                            @if(ShowLoadingButton)
+                            @if (ShowLoadingButton)
                             {
                                 <ButtonLoadingSpinner></ButtonLoadingSpinner>
                             }
@@ -57,26 +56,25 @@
 
                     <div class="card-footer">
                         <span class="text-center">
-                            Have account already? |
-                            <a class="btn-link" href="/identity/account/login">Sign In</a>
+                            Have an account already? |
+                            <NavLink class="btn-link" href="/identity/account/login">Sign In</NavLink>
                         </span>
                         <ValidationSummary />
                     </div>
                 </div>
             </EditForm>
-
         </div>
         <div class="col-lg-4"></div>
     </div>
 </div>
 
-@code{
+@code {
     public bool ShowLoadingButton { get; set; } = false;
-    Register User = new();
+    private Register User = new();
 
     [CascadingParameter] public Task<AuthenticationState>? AuthenticationState { get; set; }
 
-    protected async override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         if (AuthenticationState != null)
         {
@@ -84,17 +82,15 @@
         }
         else
         {
-            // Xử lý trường hợp AuthenticationState bị null
             Console.WriteLine("AuthenticationState is null");
-            NavManager.NavigateTo("/identity/account/login");
         }
     }
 
-    async Task HandleRegistration()
+    private async Task HandleRegistration()
     {
         ShowLoadingButton = true;
         var result = await accountService.CreateAsync(User);
-        if(result.Flag)
+        if (result.Flag)
         {
             await DisplayDialog(result.Message, "Success");
             User = new();
@@ -113,17 +109,12 @@
 
     private async Task CheckUserAuthentication()
     {
-        var user = (await AuthenticationState)?.User;
+        var authState = await AuthenticationState;
+        var user = authState?.User;
+
         if (user?.Identity != null && user.Identity.IsAuthenticated)
         {
-            // Người dùng đã xác thực, điều hướng về trang chủ
             NavManager.NavigateTo("/home/dashboard", forceLoad: true);
         }
-        else
-        {
-            // Người dùng chưa xác thực hoặc Identity bị null, điều hướng về trang đăng nhập
-            NavManager.NavigateTo("/identity/account/login");
-        }
     }
-
 }

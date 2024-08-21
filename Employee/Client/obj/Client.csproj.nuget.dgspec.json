@@ -49,6 +49,18 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Syncfusion.Licensing": {
+              "target": "Package",
+              "version": "[26.2.9, )"
             }
           },
           "imports": [
@@ -220,6 +232,10 @@
               "target": "Package",
               "version": "[8.0.7, )"
             },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
             "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -241,6 +257,10 @@
               "version": "[26.2.9, )"
             },
             "Syncfusion.Blazor.DropDowns": {
+              "target": "Package",
+              "version": "[26.2.9, )"
+            },
+            "Syncfusion.Blazor.Grid": {
               "target": "Package",
               "version": "[26.2.9, )"
             },

@@ -11,9 +11,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.7" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
     <PackageReference Include="Syncfusion.Blazor.Buttons" Version="26.2.9" />
     <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="26.2.9" />
+    <PackageReference Include="Syncfusion.Blazor.Grid" Version="26.2.9" />
     <PackageReference Include="Syncfusion.Blazor.Popups" Version="26.2.9" />
     <PackageReference Include="Syncfusion.Blazor.Themes" Version="26.2.9" />
   </ItemGroup>
