@@ -1,0 +1,176 @@
+﻿@implements IDisposable
+@if (allState.ShowOvertimeType)
+{
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="float-start">Overtime Types</h4>
+                        <button class="btn btn-outline-success float-end" @onclick="AddButtonClicked">
+                            <i class="bi bi-plus-circle-dotted"></i>
+                            Add Overtime Type
+                        </button>
+                    </div>
+
+                    <div class="card-header" style="max-height:500px; overflow-x:hidden; overflow-y:scroll;">
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Overtime Type</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (OvertimeTypes is not null)
+                                    {
+                                        int count = 1;
+                                        foreach (var item in OvertimeTypes)
+                                        {
+                                            <tr>
+                                                <th scope="row">@count</th>
+                                                <td>@item.Id</td>
+                                                <td>@item.Name</td>
+                                                <td>
+                                                    <i class="bi bi-pencil text-info" id="cursorStyle"
+                                                       @onclick="()=>EditButtonClicked(item)"></i>
+
+                                                    <i class="bi bi-trash text-danger" id="cursorStyle"
+                                                       @onclick="()=> DeleteButtonClicked(item)"></i>
+                                                </td>
+                                            </tr>
+                                            count++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="alert alert-info text-center">
+                                                    No Overtime Type added yet!
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    #cursorStyle {
+        cursor: pointer;
+    }
+</style>
+
+<OvertimeTypeDialog @ref="overtimeTypeDialog"
+                    HandleSaveOperationEvent="HandleSaveOperationEvent"
+                    OvertimeType="OvertimeType" />
+
+@code {
+    public string Title { get; set; } = "Add";
+
+    OvertimeTypeDialog? overtimeTypeDialog;
+    OvertimeType OvertimeType = new OvertimeType();
+
+    public List<OvertimeType> OvertimeTypes { get; set; } = new List<OvertimeType>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetOvertimeTypes();
+        allState.Action += StateHasChanged;
+    }
+
+    private async Task GetOvertimeTypes()
+    {
+        OvertimeTypes = await overtimeTypeService.GetAll(Constants.OvertimeTypeBaseUrl);
+    }
+
+    async Task AddButtonClicked()
+    {
+        if (OvertimeTypes == null || !OvertimeTypes.Any())
+        {
+            // Ensure overtime types are loaded before opening the dialog
+            await GetOvertimeTypes();
+        }
+
+        OvertimeType = new();
+        overtimeTypeDialog?.ChangeTitle("Add");
+        OpenDialog();
+    }
+
+    void OpenDialog()
+    {
+        overtimeTypeDialog?.OpenDialog();
+    }
+
+    private async Task HandleSaveOperationEvent(OvertimeType overtimeType)
+    {
+        bool successCheck = false;
+        if (overtimeType.Id <= 0)
+        {
+            var response = await overtimeTypeService.Insert(overtimeType, Constants.OvertimeTypeBaseUrl);
+            successCheck = await DisplayMessage(response.Flag, response.Message);
+        }
+        else
+        {
+            var result = await overtimeTypeService.Update(overtimeType, Constants.OvertimeTypeBaseUrl);
+            successCheck = await DisplayMessage(result.Flag, result.Message);
+        }
+        if (successCheck)
+        {
+            OvertimeType = new OvertimeType();
+            await GetOvertimeTypes();
+            overtimeTypeDialog?.ChangeTitle("Add");
+        }
+    }
+
+    //Edit
+    private void EditButtonClicked(OvertimeType overtimeType)
+    {
+        OvertimeType = overtimeType;
+        overtimeTypeDialog?.ChangeTitle("Update");
+        OpenDialog();
+    }
+
+    //Delete
+    private async Task DeleteButtonClicked(OvertimeType item)
+    {
+        bool confirm = await dialogService.ConfirmAsync($"Are you sure you want to delete {item.Name}?", "Confirm Delete");
+        if (!confirm) return;
+
+        var response = await overtimeTypeService.DeleteById(item.Id, Constants.OvertimeTypeBaseUrl);
+        var result = await DisplayMessage(response.Flag, response.Message);
+
+        if (result)
+            await GetOvertimeTypes();
+    }
+
+    private async Task<bool> DisplayMessage(bool flag, string message)
+    {
+        if (flag)
+        {
+            await dialogService.AlertAsync(message, "Success Operation");
+            return true;
+        }
+        else
+        {
+            await dialogService.AlertAsync(message, "Alert!");
+            return false;
+        }
+    }
+
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}
