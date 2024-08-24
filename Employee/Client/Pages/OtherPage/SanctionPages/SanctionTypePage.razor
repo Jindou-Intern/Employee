@@ -1,0 +1,176 @@
+﻿@implements IDisposable
+@if (allState.ShowSanctionType)
+{
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="float-start">Sanction Types</h4>
+                        <button class="btn btn-outline-success float-end" @onclick="AddButtonClicked">
+                            <i class="bi bi-plus-circle-dotted"></i>
+                            Add Sanction Type
+                        </button>
+                    </div>
+
+                    <div class="card-header" style="max-height:500px; overflow-x:hidden; overflow-y:scroll;">
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Sanction Type</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @if (SanctionTypes is not null)
+                                    {
+                                        int count = 1;
+                                        foreach (var item in SanctionTypes)
+                                        {
+                                            <tr>
+                                                <th scope="row">@count</th>
+                                                <td>@item.Id</td>
+                                                <td>@item.Name</td>
+                                                <td>
+                                                    <i class="bi bi-pencil text-info" id="cursorStyle"
+                                                       @onclick="()=>EditButtonClicked(item)"></i>
+
+                                                    <i class="bi bi-trash text-danger" id="cursorStyle"
+                                                       @onclick="()=> DeleteButtonClicked(item)"></i>
+                                                </td>
+                                            </tr>
+                                            count++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="alert alert-info text-center">
+                                                    No Sanction Type added yet!
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<style>
+    #cursorStyle {
+        cursor: pointer;
+    }
+</style>
+
+<SanctionTypeDialog @ref="sanctionTypeDialog"
+                    HandleSaveOperationEvent="HandleSaveOperationEvent"
+                    SanctionType="SanctionType" />
+
+@code {
+    public string Title { get; set; } = "Add";
+
+    SanctionTypeDialog? sanctionTypeDialog;
+    SanctionType SanctionType = new SanctionType();
+
+    public List<SanctionType> SanctionTypes { get; set; } = new List<SanctionType>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetSanctionTypes();
+        allState.Action += StateHasChanged;
+    }
+
+    private async Task GetSanctionTypes()
+    {
+        SanctionTypes = await sanctionTypeService.GetAll(Constants.SanctionTypeBaseUrl);
+    }
+
+    async Task AddButtonClicked()
+    {
+        if (SanctionTypes == null || !SanctionTypes.Any())
+        {
+            // Ensure sanction types are loaded before opening the dialog
+            await GetSanctionTypes();
+        }
+
+        SanctionType = new();
+        sanctionTypeDialog?.ChangeTitle("Add");
+        OpenDialog();
+    }
+
+    void OpenDialog()
+    {
+        sanctionTypeDialog?.OpenDialog();
+    }
+
+    private async Task HandleSaveOperationEvent(SanctionType sanctionType)
+    {
+        bool successCheck = false;
+        if (sanctionType.Id <= 0)
+        {
+            var response = await sanctionTypeService.Insert(sanctionType, Constants.SanctionTypeBaseUrl);
+            successCheck = await DisplayMessage(response.Flag, response.Message);
+        }
+        else
+        {
+            var result = await sanctionTypeService.Update(sanctionType, Constants.SanctionTypeBaseUrl);
+            successCheck = await DisplayMessage(result.Flag, result.Message);
+        }
+        if (successCheck)
+        {
+            SanctionType = new SanctionType();
+            await GetSanctionTypes();
+            sanctionTypeDialog?.ChangeTitle("Add");
+        }
+    }
+
+    //Edit
+    private void EditButtonClicked(SanctionType sanctionType)
+    {
+        SanctionType = sanctionType;
+        sanctionTypeDialog?.ChangeTitle("Update");
+        OpenDialog();
+    }
+
+    //Delete
+    private async Task DeleteButtonClicked(SanctionType item)
+    {
+        bool confirm = await dialogService.ConfirmAsync($"Are you sure you want to delete {item.Name}?", "Confirm Delete");
+        if (!confirm) return;
+
+        var response = await sanctionTypeService.DeleteById(item.Id, Constants.SanctionTypeBaseUrl);
+        var result = await DisplayMessage(response.Flag, response.Message);
+
+        if (result)
+            await GetSanctionTypes();
+    }
+
+    private async Task<bool> DisplayMessage(bool flag, string message)
+    {
+        if (flag)
+        {
+            await dialogService.AlertAsync(message, "Success Operation");
+            return true;
+        }
+        else
+        {
+            await dialogService.AlertAsync(message, "Alert!");
+            return false;
+        }
+    }
+
+    public void Dispose()
+    {
+        allState.Action -= StateHasChanged;
+    }
+}

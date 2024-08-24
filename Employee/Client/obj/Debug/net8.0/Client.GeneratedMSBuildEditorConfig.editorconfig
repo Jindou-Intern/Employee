@@ -70,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEVtcGxveWVlUGFnZXNcQWRkT3JVcGRhdGVFbXBsb3llZVBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/EmployeePages/EmployeeDetailPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEVtcGxveWVlUGFnZXNcRW1wbG95ZWVEZXRhaWxQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project/Employee/Employee/Client/Pages/ContentPages/EmployeePages/EmployeePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXEVtcGxveWVlUGFnZXNcRW1wbG95ZWVQYWdlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -114,12 +118,72 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXEJ1dHRvbkxvYWRpbmdTcGlubmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/ContextMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXENvbnRleHRNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/DoctorPages/DoctorDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXERvY3RvclBhZ2VzXERvY3RvckRpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/DoctorPages/DoctorPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXERvY3RvclBhZ2VzXERvY3RvclBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/OvertimePages/OvertimeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXE92ZXJ0aW1lUGFnZXNcT3ZlcnRpbWVEaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/OvertimePages/OvertimePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXE92ZXJ0aW1lUGFnZXNcT3ZlcnRpbWVQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/OvertimePages/OvertimeTypeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXE92ZXJ0aW1lUGFnZXNcT3ZlcnRpbWVUeXBlRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/OvertimePages/OvertimeTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXE92ZXJ0aW1lUGFnZXNcT3ZlcnRpbWVUeXBlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project/Employee/Employee/Client/Pages/OtherPage/ProfileDropDown.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFByb2ZpbGVEcm9wRG93bi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/SanctionPages/SanctionDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFNhbmN0aW9uUGFnZXNcU2FuY3Rpb25EaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/SanctionPages/SanctionPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFNhbmN0aW9uUGFnZXNcU2FuY3Rpb25QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/SanctionPages/SanctionTypeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFNhbmN0aW9uUGFnZXNcU2FuY3Rpb25UeXBlRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/SanctionPages/SanctionTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFNhbmN0aW9uUGFnZXNcU2FuY3Rpb25UeXBlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project/Employee/Employee/Client/Pages/OtherPage/TableBanner.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFRhYmxlQmFubmVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/VacationPages/VacationDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFZhY2F0aW9uUGFnZXNcVmFjYXRpb25EaWFsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/VacationPages/VacationPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFZhY2F0aW9uUGFnZXNcVmFjYXRpb25QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/VacationPages/VacationTypeDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFZhY2F0aW9uUGFnZXNcVmFjYXRpb25UeXBlRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Project/Employee/Employee/Client/Pages/OtherPage/VacationPages/VacationTypePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RoZXJQYWdlXFZhY2F0aW9uUGFnZXNcVmFjYXRpb25UeXBlUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Project/Employee/Employee/Client/_Imports.razor]

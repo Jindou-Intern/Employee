@@ -9,8 +9,7 @@ namespace BaseLibrary.Entities
         public string? CivilId { get; set; } = string.Empty;
         [Required]
         public string? FileNumber { get; set; } = string.Empty;
-        [Required]
-        public string? FullName { get; set; } = string.Empty;
+
         [Required]
         public string? JobName {  get; set; } = string.Empty;
         [Required]
