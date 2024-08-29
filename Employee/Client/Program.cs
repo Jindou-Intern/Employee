@@ -58,6 +58,7 @@ builder.Services.AddScoped<IGenericServiceInterface<Doctor>,GenericServiceImplem
 builder.Services.AddScoped<IGenericServiceInterface<Employee>, GenericServiceImplementation<Employee>>();
 
 builder.Services.AddScoped<AllState>();
+builder.Services.AddScoped<UserProfileState>();
 
 builder.Services.AddSyncfusionBlazor();
 builder.Services.AddScoped<SfDialogService>();

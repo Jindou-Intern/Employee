@@ -26,6 +26,7 @@
 @using ClientLibrary.Services.Contracts
 @using Client.Pages.ContentPages.DepartmentPages
 @using Client.Pages.OtherPage
+@using Client.Pages.ContentPages.ProfilePages
 
 @using Syncfusion.Blazor.Popups
 @using Syncfusion.Blazor.DropDowns
@@ -68,3 +69,7 @@
 @inject IGenericServiceInterface<SanctionType> sanctionTypeService
 
 @inject IGenericServiceInterface<Doctor> doctorService
+
+@*/User*@
+@inject UserProfileState userProfileState
+@inject GetHttpClient getHttpClient
