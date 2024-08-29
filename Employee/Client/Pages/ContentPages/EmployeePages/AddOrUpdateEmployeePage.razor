@@ -406,25 +406,38 @@
         }
 
         //File Upload
-        string ImageUpLoadMessage = "";
-        private async Task UploadImage(InputFileChangeEventArgs e)
-        {
-            if (e.File.Name.ToLower().Contains(".png"))
-            {
-                var format = "image/png";
-                var resizeImage = await e.File.RequestImageFileAsync(format, 300, 300);
-                var buffer = new byte[resizeImage.Size];
-                await resizeImage.OpenReadStream().ReadAsync(buffer);
-                var imageData = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+    string ImageUpLoadMessage = "";
+    private async Task UploadImage(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        var fileName = file.Name.ToLower();
 
-                ImageUpLoadMessage = "";
-                EmployeeGroup1.Photo = imageData;
-                imageData = "";
-                return;
+        if (fileName.EndsWith(".png") || fileName.EndsWith(".jpg") || fileName.EndsWith(".jpeg"))
+        {
+            string format;
+
+            if (fileName.EndsWith(".png"))
+            {
+                format = "image/png";
             }
-            ImageUpLoadMessage = "PNG file needed.";
+            else // for jpg/jpeg
+            {
+                format = "image/jpeg";
+            }
+
+            var resizeImage = await file.RequestImageFileAsync(format, 300, 300);
+            var buffer = new byte[resizeImage.Size];
+            await resizeImage.OpenReadStream().ReadAsync(buffer);
+            var imageData = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+
+            ImageUpLoadMessage = "";
+            EmployeeGroup1.Photo = imageData;
             return;
         }
+
+        ImageUpLoadMessage = "Only PNG or JPG files are allowed.";
+    }
+
 
         //Country/ City/Town
         [Parameter] public EventCallback<int> HandleCountrySelectedEvent { get; set; }
