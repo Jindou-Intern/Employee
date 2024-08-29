@@ -154,6 +154,9 @@
             ShowOvertime = false;
             ShowOvertimeType = false;
             ShowSanction = false;
+            ShowSanctionType = false;
+            ShowVacation = false;
+            ShowVacationType = false;
         }
     }
 }
