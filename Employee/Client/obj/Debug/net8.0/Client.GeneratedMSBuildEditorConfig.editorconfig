@@ -106,6 +106,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXExvY2F0aW9uUGFnZXNcVG93blBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Project/Employee/Employee/Client/Pages/ContentPages/ProfilePages/ProfilePage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXFByb2ZpbGVQYWdlc1xQcm9maWxlUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Project/Employee/Employee/Client/Pages/ContentPages/UserPage/UserDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGVudFBhZ2VzXFVzZXJQYWdlXFVzZXJEaWFsb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

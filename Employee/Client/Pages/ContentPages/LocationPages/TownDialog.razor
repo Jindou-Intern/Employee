@@ -35,14 +35,14 @@
                             }
                         </div>
                     </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary float-end" type="submit">SAVE</button>
+                    </div>
                 </div>
             </EditForm>
         </Content>
     </DialogTemplates>
-
-    <DialogButtons>
-        <DialogButton Content="SAVE" Type="ButtonType.Submit" IsPrimary="true" OnClick="Save" />
-    </DialogButtons>
 </SfDialog>
 
 @code {
@@ -66,11 +66,15 @@
         }
     }
 
-    public void OpenDialog()
+    public async Task OpenDialog()
     {
         IsVisible = true;
+        await ForceLoadCities();
         StateHasChanged();
     }
+
+    async Task ForceLoadCities() =>
+    Cities = await cityService.GetAll(Constants.CityBaseUrl);
 
     public void ChangeTitle(string title)
     {
